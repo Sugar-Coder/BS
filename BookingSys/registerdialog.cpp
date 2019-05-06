@@ -14,9 +14,13 @@ registerDialog::~registerDialog()
 }
 //83页
 
-void registerDialog::on_pushButton_clicked()
+
+void registerDialog::on_regButton_clicked()
 {
-    if(true)  //成功注册后
-        accept();
+    accept();
 }
 
+void registerDialog::on_returnButton_clicked()
+{
+    close();
+}

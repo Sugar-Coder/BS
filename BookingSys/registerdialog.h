@@ -16,7 +16,10 @@ public:
     ~registerDialog();
 
 private slots:
-    void on_pushButton_clicked();
+
+    void on_regButton_clicked();
+
+    void on_returnButton_clicked();
 
 private:
     Ui::registerDialog *ui;

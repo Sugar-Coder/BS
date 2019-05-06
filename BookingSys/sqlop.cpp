@@ -47,7 +47,7 @@ std::string DB::selectAll(std::string select,std::string from,int col)
     }
 }
 
-std::string DB::selectSql(std::string select,std::string from,std::string where,int col)
+std::string DB::selectSql(std::string select,std::string from,std::string where,int col) //选择order表时用BookingSystem.order
 {
     std::string sqlstr ="SELECT ";
     sqlstr+=select;

@@ -22,8 +22,6 @@ void loginDialog::on_loginButton_clicked()
 
 void loginDialog::on_registerButton_clicked()
 {
-    close();//关闭登陆界面，其实是隐藏
-    registerDialog regdlg;
-    if(regdlg.exec() == QDialog::Accepted)
-        show(); //注册完后再次登陆
+    regdlg->raise();
+    regdlg->exec();
 }
