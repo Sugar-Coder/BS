@@ -39,7 +39,8 @@ HEADERS += \
     sqlop.h \
     logindialog.h \
     registerdialog.h \
-    initer.h
+    initer.h \
+    header.h
 
 FORMS += \
         mainwidget.ui \

@@ -1,19 +1,24 @@
 #include "mainwidget.h"
 #include <QApplication>
-#include <sqlop.h>
+//#include <sqlop.h>
 #include <QDebug>
 #include "logindialog.h"
+//#include "header.h"
+#include "initer.h"
 
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     mainWidget w;
+    w.setWindowTitle(QObject::tr("订票系统"));
     loginDialog ldialog;
+    ldialog.setWindowTitle(QObject::tr("登陆"));
 
     if(ldialog.exec()==QDialog::Accepted)
     {
         w.show();
+        initer ini;
         return a.exec();
     }
     else return 0;
@@ -26,4 +31,10 @@ int main(int argc, char *argv[])
     //qDebug() << db.updateUser(1,"tuser",123).data();
     //qDebug() << db.insertOrder(2,2002,1).data();
     //qDebug() << db.deleteOrder(1,1092).data(); //删除的一直为success
+    /*
+    DB db = DB("BookingSystem");
+    string result = db.selectSql("password","user","name='tuser'",1);
+    qDebug() << result.data();
+    bool judg = result.compare(std::to_string(123));
+    qDebug() << judg;*/
 }
