@@ -88,7 +88,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>汉字、字母、数字</string>
+    <string/>
    </property>
   </widget>
   <widget class="QLineEdit" name="id">
@@ -111,7 +111,10 @@
     </rect>
    </property>
    <property name="text">
-    <string>5-10位数字</string>
+    <string/>
+   </property>
+   <property name="echoMode">
+    <enum>QLineEdit::PasswordEchoOnEdit</enum>
    </property>
   </widget>
   <widget class="QLineEdit" name="Rpassword">
@@ -124,7 +127,10 @@
     </rect>
    </property>
    <property name="text">
-    <string>再次输入密码</string>
+    <string/>
+   </property>
+   <property name="echoMode">
+    <enum>QLineEdit::PasswordEchoOnEdit</enum>
    </property>
   </widget>
   <widget class="QPushButton" name="regButton">

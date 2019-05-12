@@ -35,7 +35,7 @@ void loginDialog::on_loginButton_clicked()
     else {
         ui->nameEdit->clear();
         ui->passwordEdit->clear();
-        int ret1=QMessageBox::information(this,tr("请重新登录！"),
+        QMessageBox::information(this,tr("请重新登录！"),
                                           tr("错误的用户名或密码"),QMessageBox::Ok);
     }
 }
