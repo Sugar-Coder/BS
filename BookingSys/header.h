@@ -6,4 +6,6 @@
 extern DB db;  //全局类，用于操纵数据库，声明可以重复多次，用于包含在各个头文件中
 extern initer init;
 
+bool isDigitString(const QString &src);
+
 #endif // HEADER_H

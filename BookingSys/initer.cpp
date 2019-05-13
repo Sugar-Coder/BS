@@ -6,6 +6,7 @@ string initer::AdminName = "admin";
 int initer::AdminPassword = 888;
 status initer::state = {false,false};
 string initer::user = "null";
+int initer::userid = -1;
 
 DB db = DB("BookingSystem"); //全局类的定义，只能定义一次
 
@@ -39,6 +40,9 @@ bool initer::setlogin(string name,int password)
         {
             state.login = true;
             this->user = name;  //将状态保存为该用户的登录状态
+            int id = atoi(db.selectSql("id","user",nm,1).data());
+            this->userid = id;
+            qDebug() << id;
             return true;
         }
         else

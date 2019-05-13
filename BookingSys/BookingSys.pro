@@ -31,7 +31,8 @@ SOURCES += \
     sqlop.cpp \
     logindialog.cpp \
     registerdialog.cpp \
-    initer.cpp
+    initer.cpp \
+    selfmesdialog.cpp
 
 HEADERS += \
         mainwidget.h \
@@ -40,12 +41,14 @@ HEADERS += \
     logindialog.h \
     registerdialog.h \
     initer.h \
-    header.h
+    header.h \
+    selfmesdialog.h
 
 FORMS += \
         mainwidget.ui \
     logindialog.ui \
-    registerdialog.ui
+    registerdialog.ui \
+    selfmesdialog.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

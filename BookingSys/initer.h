@@ -17,6 +17,7 @@ private:
     static string AdminName;
     static int AdminPassword;
     static string user; //已登陆的用户名，初值为null
+    static int userid;
 public:
     initer();
     ~initer();
@@ -26,6 +27,7 @@ public:
     string currentUser(){return user;}  //返回当前用户
     void userQuit(){user = "null"; state.login = false;}  //用户退出登录
     string planeFormat(string searchResult);
+    int currentUserid(){return userid;} //返回当前用户id
 };
 
 #endif // INITER_H

@@ -23,7 +23,6 @@ class Ui_mainWidget
 public:
     QLineEdit *fromlineEdit;
     QLineEdit *tolineEdit;
-    QLabel *arrowpix;
     QLabel *planemess;
     QPushButton *inquireButton;
     QPushButton *exitButton;
@@ -32,6 +31,7 @@ public:
     QLabel *label;
     QPushButton *bookButton;
     QPushButton *userButton;
+    QPushButton *exchangeButton;
 
     void setupUi(QWidget *mainWidget)
     {
@@ -44,9 +44,6 @@ public:
         tolineEdit = new QLineEdit(mainWidget);
         tolineEdit->setObjectName(QString::fromUtf8("tolineEdit"));
         tolineEdit->setGeometry(QRect(270, 80, 101, 51));
-        arrowpix = new QLabel(mainWidget);
-        arrowpix->setObjectName(QString::fromUtf8("arrowpix"));
-        arrowpix->setGeometry(QRect(170, 90, 71, 31));
         planemess = new QLabel(mainWidget);
         planemess->setObjectName(QString::fromUtf8("planemess"));
         planemess->setGeometry(QRect(60, 190, 281, 181));
@@ -71,6 +68,9 @@ public:
         userButton = new QPushButton(mainWidget);
         userButton->setObjectName(QString::fromUtf8("userButton"));
         userButton->setGeometry(QRect(160, 10, 111, 32));
+        exchangeButton = new QPushButton(mainWidget);
+        exchangeButton->setObjectName(QString::fromUtf8("exchangeButton"));
+        exchangeButton->setGeometry(QRect(160, 90, 141, 41));
 
         retranslateUi(mainWidget);
 
@@ -80,7 +80,6 @@ public:
     void retranslateUi(QWidget *mainWidget)
     {
         mainWidget->setWindowTitle(QApplication::translate("mainWidget", "mainWidget", nullptr));
-        arrowpix->setText(QApplication::translate("mainWidget", "TextLabel", nullptr));
         planemess->setText(QApplication::translate("mainWidget", "TextLabel", nullptr));
         inquireButton->setText(QApplication::translate("mainWidget", "\346\237\245\350\257\242", nullptr));
         exitButton->setText(QApplication::translate("mainWidget", "\351\200\200\345\207\272\347\231\273\345\275\225", nullptr));
@@ -88,6 +87,7 @@ public:
         label->setText(QApplication::translate("mainWidget", "\350\276\223\345\205\245\350\210\252\347\217\255\345\217\267", nullptr));
         bookButton->setText(QApplication::translate("mainWidget", "\350\256\242\347\245\250", nullptr));
         userButton->setText(QApplication::translate("mainWidget", "\344\270\252\344\272\272\344\277\241\346\201\257", nullptr));
+        exchangeButton->setText(QString());
     } // retranslateUi
 
 };

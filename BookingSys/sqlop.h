@@ -34,7 +34,7 @@ public:
     //删除订票信息
     std::string deleteOrder(int userid,int planeid);
     //更改航班信息
-    //std::string updatePlane(std::string field,std::string new_value);
+    std::string updatePlaneSeats(int newSeatsNum,int pid);
 };
 
 #endif // SQLOP_H

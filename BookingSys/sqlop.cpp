@@ -134,3 +134,15 @@ std::string DB::deleteOrder(int userid, int planeid)
          return "success";
     return "failed";
 }
+
+std::string DB::updatePlaneSeats(int newSeatsNum, int pid)
+{
+    std::string sqlstr = "UPDATE plane SET seatsnum =";
+    sqlstr += std::to_string(newSeatsNum);
+    sqlstr += " WHERE pid = ";
+    sqlstr += std::to_string(pid);
+    char *SQL = (char *)sqlstr.data();
+    if(connector->UpdateData(SQL,Msg) == 0)
+        return "success";
+    return "failed";
+}
