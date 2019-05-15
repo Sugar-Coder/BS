@@ -23,7 +23,7 @@ private slots:
 
 private:
     Ui::loginDialog *ui;
-    registerDialog *regdlg = new registerDialog;
+    //registerDialog *regdlg = new registerDialog;
 };
 
 #endif // LOGINDIALOG_H

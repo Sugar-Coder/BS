@@ -15,6 +15,15 @@ public:
     explicit selfmesDialog(QWidget *parent = nullptr);
     ~selfmesDialog();
 
+private slots:
+    void on_myorderButton_clicked();
+
+    void on_nameButton_3_clicked();
+
+    void on_passwButton_clicked();
+
+    void on_unsubButton_clicked();
+
 private:
     Ui::selfmesDialog *ui;
 };

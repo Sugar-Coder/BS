@@ -42,7 +42,7 @@ mainWidget::mainWidget(QWidget *parent) :
     ui->fromlineEdit->setText(tr("出发"));
     ui->tolineEdit->setText(tr("到达"));
     ui->planemess->hide(); //开始的时候隐藏机票查询的信息
-    initer init;
+
     QString welcome = "欢迎！";
     welcome += init.currentUser().data();
     ui->username->setText(welcome);
@@ -112,10 +112,16 @@ void mainWidget::on_exitButton_clicked()
     ui->planemess->clear();
     ui->fromlineEdit->setText(tr("出发"));
     ui->tolineEdit->setText(tr("到达"));
+    ui->plainIdInput->clear();
     close();
     loginDialog ldialog;
     if(ldialog.exec() == QDialog::Accepted)
+    {
+        QString welcome = "欢迎！";
+        welcome += init.currentUser().data();
+        ui->username->setText(welcome);
         show();
+    }
 }
 
 void mainWidget::on_exchangeButton_clicked()//交换出发和到达
@@ -191,6 +197,11 @@ void mainWidget::on_bookButton_clicked() //订票按钮
 
 void mainWidget::on_userButton_clicked() //显示用户个人信息页面
 {
-    selfdlg->raise();
-    selfdlg->exec();
+    selfmesDialog *selfdlg = new selfmesDialog;
+    if(selfdlg->exec()==QDialog::Accepted)
+    {
+        delete selfdlg;
+    }
+    //selfdlg->raise();
+    //selfdlg->exec();
 }

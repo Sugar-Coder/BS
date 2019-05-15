@@ -81,3 +81,25 @@ string initer::planeFormat(string searchResult)
     //qDebug() << buffer.data();
     return buffer;
 }
+
+string initer::orderFormat(string myorder)
+{
+    int i=0;
+    string buffer = "航班号\t订票数量\t出发\t到达\n";
+    while(i<myorder.length())
+    {
+        if(myorder[i]!=rg&&myorder[i]!=cg)
+        {
+            buffer += myorder[i++];
+        }
+        else if(myorder[i]==cg){ //列分隔符
+            i++;
+            buffer += "\t|";
+        }
+        else if(myorder[i]==rg){//行分割
+            i++;
+            buffer+="\n";
+        }
+    }
+    return buffer;
+}

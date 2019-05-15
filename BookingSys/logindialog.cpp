@@ -39,9 +39,15 @@ void loginDialog::on_loginButton_clicked()
                                           tr("错误的用户名或密码"),QMessageBox::Ok);
     }
 }
-//84
+
 void loginDialog::on_registerButton_clicked()
 {
-    regdlg->raise();
-    regdlg->exec();
+    registerDialog *regdlg = new registerDialog;
+    regdlg->setWindowTitle("注册");
+    if(regdlg->exec() == QDialog::Accepted)
+    {
+        delete regdlg;
+    }
+    //regdlg->raise();
+    //regdlg->exec();
 }

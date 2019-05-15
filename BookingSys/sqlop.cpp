@@ -96,10 +96,18 @@ std::string DB::deleteUser(const int id)
 
 std::string DB::updateUser(const int id,std::string username, const int password)
 {
-    std::string sqlstr = "UPDATE user SET name='";
-    sqlstr += username;
-    sqlstr += "',password=";
-    sqlstr += std::to_string(password);
+    std::string sqlstr = "UPDATE user SET ";
+    if(username != "unchange")
+    {
+        sqlstr += " name = '";
+        sqlstr += username;
+        sqlstr += "'";
+    }
+    if(password!=-1)
+    {
+        sqlstr += " password = ";
+        sqlstr += std::to_string(password);
+    }
     sqlstr += " WHERE id =";
     sqlstr += std::to_string(id);
     char *SQL = (char *)sqlstr.data();

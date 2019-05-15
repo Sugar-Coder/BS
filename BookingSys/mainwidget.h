@@ -29,7 +29,7 @@ private slots:
 
 private:
     Ui::mainWidget *ui;
-    selfmesDialog *selfdlg = new selfmesDialog;
+    //selfmesDialog *selfdlg = new selfmesDialog;
 };
 
 #endif // MAINWIDGET_H
