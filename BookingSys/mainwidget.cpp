@@ -105,7 +105,7 @@ void mainWidget::on_inquireButton_clicked(bool checked)
     ui->planemess->setVisible(true);
 }
 
-void mainWidget::on_exitButton_clicked()
+void mainWidget::on_exitButton_clicked() //用户退出登录，返回登陆界面
 {
     initer init;
     init.userQuit();

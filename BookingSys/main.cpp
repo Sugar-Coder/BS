@@ -4,8 +4,6 @@
 #include <QDebug>
 #include "logindialog.h"
 #include "header.h"
-//#include "initer.h" //header include initer
-
 
 int main(int argc, char *argv[])
 {

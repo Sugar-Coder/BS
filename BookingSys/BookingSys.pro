@@ -32,7 +32,9 @@ SOURCES += \
     logindialog.cpp \
     registerdialog.cpp \
     initer.cpp \
-    selfmesdialog.cpp
+    selfmesdialog.cpp \
+    admindialog.cpp \
+    planedialog.cpp
 
 HEADERS += \
         mainwidget.h \
@@ -42,13 +44,17 @@ HEADERS += \
     registerdialog.h \
     initer.h \
     header.h \
-    selfmesdialog.h
+    selfmesdialog.h \
+    admindialog.h \
+    planedialog.h
 
 FORMS += \
         mainwidget.ui \
     logindialog.ui \
     registerdialog.ui \
-    selfmesdialog.ui
+    selfmesdialog.ui \
+    admindialog.ui \
+    planedialog.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

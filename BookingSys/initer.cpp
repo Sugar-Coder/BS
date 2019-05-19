@@ -7,6 +7,7 @@ int initer::AdminPassword = 888;
 status initer::state = {false,false};
 string initer::user = "null";
 int initer::userid = -1;
+int initer::planeid = -1;
 
 DB db = DB("BookingSystem"); //全局类的定义，只能定义一次
 
@@ -67,7 +68,7 @@ string initer::planeFormat(string searchResult)
             i++;
             colcounter ++;
             if(colcounter==6) //对于航空公司，多给一些地方
-            buffer += "\t\t|";
+            buffer += "\t|";
             else {
                 buffer += "\t|";
             }

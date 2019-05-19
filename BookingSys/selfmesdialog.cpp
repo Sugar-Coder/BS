@@ -15,7 +15,8 @@ selfmesDialog::selfmesDialog(QWidget *parent) :
     string nm = "name = '";
     nm += init.currentUser();
     nm += "'";
-    ui->passwordEdit->setText(db.selectSql("password","user",nm,1).data());
+    int pw =std::atoi(db.selectSql("password","user",nm,1).data());
+    ui->passwordEdit->setText(QString::number(pw));
     ui->myorderList->hide();
 }
 
@@ -64,6 +65,7 @@ void selfmesDialog::on_nameButton_3_clicked() //修改用户名按钮
 void selfmesDialog::on_passwButton_clicked() //修改密码
 {
     QString newpass = ui->passwordEdit->text();
+
     string nm = "name = '";
     nm += init.currentUser();
     nm += "'";

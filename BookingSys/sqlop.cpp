@@ -154,3 +154,40 @@ std::string DB::updatePlaneSeats(int newSeatsNum, int pid)
         return "success";
     return "failed";
 }
+
+//插入新的航班
+QString DB::insertPlane(int pid,int price, int seatsnum, QString from, QString to, QString company, QString fromTime, QString toTime)
+{
+    QString sqlQstr = "INSERT INTO plane VALUES (";
+    sqlQstr += QString::number(pid);
+    sqlQstr += ",";
+    sqlQstr += QString::number(seatsnum);
+    sqlQstr += ",";
+    sqlQstr += QString::number(price);
+    sqlQstr += ",'";
+    sqlQstr += from;
+    sqlQstr += "','";
+    sqlQstr += to;
+    sqlQstr += "','";
+    sqlQstr += company;
+    sqlQstr += "','";
+    sqlQstr += fromTime;
+    sqlQstr += "-";
+    sqlQstr += toTime;
+    sqlQstr += "')";
+    char *SQL = (char *)sqlQstr.toStdString().data();
+    if(connector->InsertData(SQL,Msg) == 0)
+        return "success";
+    return "failed";
+}
+
+//删除航班所有信息
+std::string DB::deletePlane(int pid)
+{
+    string sqlstr = "DELETE FROM plane WHERE pid = ";
+    sqlstr += std::to_string(pid);
+    char *SQL = (char *)sqlstr.data();
+    if(connector->DeleteData(SQL,Msg)==0)
+        return "success";
+    return "failed";
+}

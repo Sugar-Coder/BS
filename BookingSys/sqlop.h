@@ -33,8 +33,12 @@ public:
     std::string insertOrder(int userid,int planeid,int num);
     //删除订票信息
     std::string deleteOrder(int userid,int planeid);
-    //更改航班信息
+    //更改航班座位数
     std::string updatePlaneSeats(int newSeatsNum,int pid);
+    //插入新航班
+    QString insertPlane(int pid,int price,int seatsnum,QString from,QString to,QString company,
+                        QString fromTime,QString toTime);
+    std::string deletePlane(int pid);
 };
 
 #endif // SQLOP_H

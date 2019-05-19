@@ -1,6 +1,7 @@
 #include "logindialog.h"
 #include "ui_logindialog.h"
 #include "registerdialog.h"
+#include "admindialog.h"
 #include "initer.h"
 #include <QMessageBox> //消息对话框
 
@@ -26,8 +27,14 @@ void loginDialog::on_loginButton_clicked()
     {
         if(init.isAdmin())
         {
-            //open the plane insert dialog
-            accept();
+            ui->nameEdit->clear();
+            ui->passwordEdit->clear();
+            AdminDialog *addlg = new AdminDialog;
+            if(addlg->exec()==QDialog::Accepted)
+            {
+                delete addlg;
+                //show();
+            }
         }
         else if(init.islogin())
             accept();
