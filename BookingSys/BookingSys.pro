@@ -34,7 +34,8 @@ SOURCES += \
     initer.cpp \
     selfmesdialog.cpp \
     admindialog.cpp \
-    planedialog.cpp
+    planedialog.cpp \
+    plalterdialog.cpp
 
 HEADERS += \
         mainwidget.h \
@@ -46,7 +47,8 @@ HEADERS += \
     header.h \
     selfmesdialog.h \
     admindialog.h \
-    planedialog.h
+    planedialog.h \
+    plalterdialog.h
 
 FORMS += \
         mainwidget.ui \
@@ -54,7 +56,8 @@ FORMS += \
     registerdialog.ui \
     selfmesdialog.ui \
     admindialog.ui \
-    planedialog.ui
+    planedialog.ui \
+    plalterdialog.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -67,3 +70,5 @@ else:unix: LIBS += -L$$PWD/../../../../../usr/local/mysql-5.7.25-macos10.14-x86_
 
 INCLUDEPATH += $$PWD/../../../../../usr/local/mysql-5.7.25-macos10.14-x86_64/include
 DEPENDPATH += $$PWD/../../../../../usr/local/mysql-5.7.25-macos10.14-x86_64/lib
+
+#ICON = Icon.icns #程序运行图标

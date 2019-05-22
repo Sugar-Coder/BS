@@ -8,6 +8,7 @@ planeDialog::planeDialog(QWidget *parent) :
     ui(new Ui::planeDialog)
 {
     ui->setupUi(this);
+    this->setWindowTitle("新航班");
     string mess = "请继续录入航班";
     mess += std::to_string(init.currentPlaneid());
     mess += "的信息";
@@ -30,7 +31,7 @@ void planeDialog::on_commitButton_clicked()
     QString toTime = ui->toTimeEdit->text();
     if(price == 99||seatsnum==1||from.isEmpty()||to.isEmpty()||company.isEmpty())
         QMessageBox::information(this,tr("警告！"),
-                                 tr("输入有空"),QMessageBox::Ok);
+                                 tr("输入有空或者值过小"),QMessageBox::Ok);
     else {
         string result=db.insertPlane(init.currentPlaneid(),price,seatsnum,from,to,company,fromTime,toTime).toStdString();
         if(result == "success")

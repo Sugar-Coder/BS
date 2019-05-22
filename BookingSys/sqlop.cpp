@@ -191,3 +191,15 @@ std::string DB::deletePlane(int pid)
         return "success";
     return "failed";
 }
+
+QString DB::updatePlaneMess(QString newfield, int pid)
+{
+    string sqlstr = "UPDATE plane SET ";
+    sqlstr += newfield.toStdString();
+    sqlstr += " WHERE pid = ";
+    sqlstr += std::to_string(pid);
+    char *SQL = (char *)sqlstr.data();
+    if(connector->UpdateData(SQL,Msg)==0)
+        return "success";
+    return "failed";
+}

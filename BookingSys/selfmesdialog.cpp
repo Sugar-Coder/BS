@@ -35,7 +35,7 @@ void selfmesDialog::on_myorderButton_clicked() //查询订单按钮
     if(myorder != "NULL")
         ui->myorderList->setText(init.orderFormat(myorder).data());
     else {
-        ui->myorderList->setText("您还为订票呢！就来查询啊");
+        ui->myorderList->setText("您还没订票呢！就来查询啊");
     }
 }
 
@@ -107,6 +107,16 @@ void selfmesDialog::on_unsubButton_clicked() //退订机票
             db.updatePlaneSeats(newNum,pidInput.toInt());
             QMessageBox::information(this,tr("success"),
                                      tr("退票成功"),QMessageBox::Ok);
+            //以下为更新订单信息
+            string id = "BookingSystem.order.userid = ";
+            id += std::to_string(init.currentUserid());
+            id += " AND BookingSystem.order.planeid = plane.pid";
+            string myorder = db.selectSql("BookingSystem.order.planeid,BookingSystem.order.num,plane.from,plane.to","BookingSystem.order,plane",id,4);
+            if(myorder != "NULL")
+                ui->myorderList->setText(init.orderFormat(myorder).data());
+            else {
+                ui->myorderList->setText("您还没订票呢！就来查询啊");
+            }
         }
     }
     else {

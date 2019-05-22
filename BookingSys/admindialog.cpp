@@ -3,6 +3,7 @@
 #include "header.h"
 #include "logindialog.h"
 #include "planedialog.h"
+#include "plalterdialog.h"
 #include <QInputDialog>
 #include <QMessageBox>
 
@@ -44,6 +45,7 @@ void AdminDialog::on_addButton_clicked() //增添机票信息
             if(planedlg->exec()==QDialog::Accepted) //打开航班信息录入对话框
             {
                 delete planedlg;
+                init.setPlaneid(-1);
                 string allplane = db.selectAll("*","plane",7); //更新航班信息
                 ui->planemess->setText(init.planeFormat(allplane).data());
             }
@@ -78,6 +80,31 @@ void AdminDialog::on_deleteButton_clicked() //删除航班信息
                                              tr("删除成功"),QMessageBox::Ok);
                 }
             }
+        }
+    }
+}
+
+void AdminDialog::on_alterButton_clicked() //更改航班信息
+{
+    bool Ok = false;
+    int planeid = QInputDialog::getInt(this,tr("更该航班"),
+                                       tr("请输入航班号"),0,0,100000,0,&Ok);
+    if(Ok){
+        string idJudge = "pid = ";
+        idJudge += std::to_string(planeid);
+        if(db.selectSql("company","plane",idJudge,1)!="NULL"){ //id存在
+            init.setPlaneid(planeid); //设置正在操作的航班号
+            plAlterDialog *plAlterdlg = new plAlterDialog;
+            if(plAlterdlg->exec()==QDialog::Accepted)
+            {
+                delete plAlterdlg;
+                string allplane = db.selectAll("*","plane",7); //更新航班信息
+                ui->planemess->setText(init.planeFormat(allplane).data());
+            }
+        }
+        else {
+            QMessageBox::information(this,tr("注意"),
+                                     tr("错误的航班号"),QMessageBox::Ok);
         }
     }
 }

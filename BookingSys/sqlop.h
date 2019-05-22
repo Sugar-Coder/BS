@@ -39,6 +39,7 @@ public:
     QString insertPlane(int pid,int price,int seatsnum,QString from,QString to,QString company,
                         QString fromTime,QString toTime);
     std::string deletePlane(int pid);
+    QString updatePlaneMess(QString newfield,int pid); //更新航班信息
 };
 
 #endif // SQLOP_H
