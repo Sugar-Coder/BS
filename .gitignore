@@ -2,5 +2,6 @@
 *.pages
 *.app
 *.numbers
+*.doc
 ##ignore this file##
 /build-BookingSys-unknown-Debug/

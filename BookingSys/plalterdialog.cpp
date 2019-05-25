@@ -92,7 +92,7 @@ void plAlterDialog::on_AlterButton_clicked()
     }
     if(fromEdit != fE)
     {
-        newM = "from = '";
+        newM = "plane.from = '";
         newM += fromEdit;
         newM += "'";
         if(db.updatePlaneMess(newM,id)=="success")
@@ -102,7 +102,7 @@ void plAlterDialog::on_AlterButton_clicked()
     }
     if(toEdit != tE)
     {
-        newM = "to = '";
+        newM = "plane.to = '";
         newM += toEdit;
         newM += "'";
         if(db.updatePlaneMess(newM,id)=="success")
@@ -112,7 +112,7 @@ void plAlterDialog::on_AlterButton_clicked()
     }
     if((toTimeEdit != tTE)||(fromTimeEdit != fTE))
     {
-        newM = "time = '";
+        newM = "plane.time = '";
         newM += fromTimeEdit;
         newM += "-";
         newM += toTimeEdit;
